@@ -1,0 +1,7 @@
+body{
+    height: 100%;
+    overflow: hidden;
+    background: #4CA1AF; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4CA1AF , #C4E0E5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4CA1AF , #C4E0E5);
+}
