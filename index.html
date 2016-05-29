@@ -25,10 +25,10 @@
     <link rel="stylesheet" href="css/front.css">
 </head>
 <body>
-<div class="front_page">
-
-</div>
-<div class="skills_first">
+<div class="full_page">
+    <div class="front_page">
+    </div>
+    <div class="skills_first">
     <div class="skills_my_skill">
         <h1 class="text-xl-center" style="font-size: 5em; padding: 10px;color: lavenderblush">SKILLS</h1>
     </div>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="circle center-block software_development software_dev_color" style="width: 80%;" >
+                <div class="circle center-block software_development software_dev_color" style="width: 60%;" >
                     <h5 class="text-md-center center-circle">Software Development</h5>
                 </div>
             </div>
@@ -82,7 +82,7 @@
 
         <div class="row" style="margin-top: 80px">
             <div class="col-md-4">
-                <div class="circle center-block c software_dev_color" style="width: 60%">
+                <div class="circle center-block cprogram software_dev_color" style="width: 60%">
                     <h5 class="text-md-center center-circle">C</h5>
                 </div>
             </div>
@@ -166,11 +166,12 @@
         </div>
     </div>
 </div>
-<div class="skills_second">
+    <div class="skills_second">
 <h1>lol k</h1>
 </div>
-<div class="work_experience">
+    <div class="work_experience">
 
+</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
@@ -188,7 +189,7 @@
         $('.circle').each(function () {
             var circle_width = $(this).width();
             $(this).height(circle_width);
-            $(this).css({opacity: 0}).animate({opacity: 1.0}, timerForOpacityChange);
+            $(this).animate({opacity: 1.0}, timerForOpacityChange);
             timerForOpacityChange += 200;
         })
     }
@@ -200,6 +201,7 @@
                 $(this).removeClass("circle_hover");
             }
     )
+
 
 
 
@@ -219,15 +221,16 @@
         drawLine('.software_development', '.UML');
         drawLine('.java', '.android');
         drawLine('.java', '.javafx');
-        drawLine('.software_development', '.c');
+        drawLine('.software_development', '.cprogram');
         drawLine('.webdev', '.html5');
         drawLine('.webdev', '.javascript');
         drawLine('.webdev', '.webserver');
         drawLine('.webserver', '.nginx');
         drawLine('.webserver', '.apache');
         drawLine('.javascript', '.nodejs');
-        drawLine('.javascript', '.jquery');
+        drawLine('.jquery', '.javascript');
         drawLine('.webdev', '.php');
+
 
         /*
         drawLine('.git', '.c');
@@ -241,8 +244,8 @@
         drawLine('.UML', '.cplus');
         */
 
-        drawLine('.laravel', '.php');
-        drawLine('.bootstrap', '.html5');
+        drawLine('.php', '.laravel');
+        drawLine('.html5', '.bootstrap');
     }
     function drawLine(div1, div2){
         var div1Y= $(div1).offset().top + $(div1).height() / 2;
@@ -251,10 +254,13 @@
         var div2X = $(div2).offset().left + $(div2).width() / 2;
         
         createLineElement(div1X, div1Y, div2X, div2Y);
+        console.log(div1);
+        
         
     }
 
     function createLineElement(x1, y1, x2, y2){
+        /*
         var a = x1 - x2,
                 b = y1 - y2,
                 c = Math.sqrt(a * a + b * b);
@@ -278,9 +284,10 @@
                 + '-moz-transition: all 3s ease-in-out;'
                 + '-ms-transition: all 3s ease-in-out;'
                 + '-o-transition: all 3s ease-in-out;'
-                + 'transition: all 3s ease-in-out;' ;
+                + 'transition: all 3s ease-in-out;'
+                + 'z-index: -1;';
         line.setAttribute('style', styles);
-        document.body.appendChild(line);
+        //$('.skills_first').append(line);
         setTimeout(function () {
             $(line).css({
                     '-moz-transform': 'rotate(' + angle + 'rad)',
@@ -288,18 +295,108 @@
                     '-o-transform': 'rotate(' + angle + 'rad)',
                     '-ms-transform': 'rotate(' + angle + 'rad)'
             });
-        }, 100)
+        }, 100);
+        */
+        var svg_Y;
+        var svg_X;
+        var width;
+        var height;
+        var line_X1;
+        var line_Y1;
+        var line_X2;
+        var line_Y2;
+        var line_width;
+
+        width = Math.abs(x2 - x1);
+        height = Math.abs(y2 - y1);
+        
+        if(Math.abs(x2 - x1) < 1){
+            line_width = 4;
+            width = 5;
+            if(y2 > y1){
+                svg_X = x1;
+                svg_Y = y1;
+                line_X1 = 0;
+                line_Y1 = 0;
+                line_X2 = 0;
+                line_Y2 = height;
+            }else{
+                svg_X = x2;
+                svg_Y = y2;
+                line_X1 = 0;
+                line_Y1 = 0;
+                line_X2 = 0;
+                line_Y2 = height;
+            }
+        }else if(y2 > y1){
+            line_width = 2;
+            if(x2 > x1){
+                svg_X = x1;
+                svg_Y = y1;
+                line_X1 = 0;
+                line_Y1 = 0;
+                line_X2 = width;
+                line_Y2 = height;
+            }else{
+                svg_X = x2;
+                svg_Y = y1;
+                line_X1 = width;
+                line_Y1 = 0;
+                line_X2 = 0;
+                line_Y2 = height;
+            }
+        }else{
+            line_width = 2;
+            if(x1 > x2){
+                svg_X = x2;
+                svg_Y = y2;
+                line_X1 = 0;
+                line_Y1 = 0;
+                line_X2 = width;
+                line_Y2 = height;
+            }else{
+                svg_X = x1;
+                svg_Y = y2;
+                line_X1 = width;
+                line_Y1 = 0;
+                line_X2 = 0;
+                line_Y2 = height;
+            }
+        }
+        var svgContainer = d3.select(".skills_first").append("svg")
+                .attr("width", width)
+                .attr("height", height).attr("style", "position:absolute; top: " + svg_Y + "px; left:" + svg_X + "px;");
+
+
+        var circle = svgContainer.append("line")
+                .attr("x1", line_X1)
+                .attr("y1", line_Y1)
+                .attr("x2", line_X2)
+                .attr("y2", line_Y2)
+                .attr("stroke-width", line_width)
+                .attr("stroke", "black").attr("class", "path");
+        //console.log(svg_width);
+        //console.log("Y2: " + y2);
+
+        
     }
 
     var EnteredSkillsOnce = false;
+    var scrollValue = 0;
     $('body').mousewheel(function(event) {
         if(event.deltaY == -1 && !recentScroll){
-            $('body').animate({
-                scrollTop: $('body').scrollTop() + window_height
-            }, 500)
+            console.log("Hello");
+            $('.full_page').css({
+                '-moz-transform': 'translateY(' + (scrollValue-window_height) + 'px)',
+                '-webkit-transform': 'translateY(' + (scrollValue-window_height) + 'px)',
+                '-o-transform': 'translateY(' + (scrollValue-window_height) + 'px)',
+                '-ms-transform': 'translateY(' + (scrollValue-window_height) + 'px)',
+                'transform': 'translateY(' + (scrollValue-window_height) + 'px)'
+            });
             recentScroll = true;
             setTimeout(function (){
                 recentScroll = false;
+                scrollValue -= window_height;
             }, 1000);
             setTimeout(function () {
                 if(!EnteredSkillsOnce) {
@@ -307,14 +404,19 @@
                     drawAllLine();
                     EnteredSkillsOnce = true;
                 }
-            }, 500);
+            }, 1000);
         }else if(event.deltaY && !recentScroll){
-            $('html, body').animate({
-                scrollTop: $('body').scrollTop() - window_height
-            }, 500)
+            $('.full_page').css({
+                '-moz-transform': 'translateY(' + (scrollValue+window_height) + 'px)',
+                '-webkit-transform': 'translateY(' + (scrollValue+window_height) + 'px)',
+                '-o-transform': 'translateY(' + (scrollValue+window_height) + 'px)',
+                '-ms-transform': 'translateY(' + (scrollValue+window_height) + 'px)',
+                'transform': 'translateY(' + (scrollValue+window_height) + 'px)'
+            });
             recentScroll = true;
             setTimeout(function (){
                 recentScroll = false;
+                scrollValue += window_height;
             }, 1000)
         }
     });

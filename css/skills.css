@@ -1,7 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 .skills_first{
     height: 100%;
-
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    position: relative;
 }
 .skills_second{
     height: 100%;
@@ -19,7 +24,7 @@
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 100;
     opacity: 0;
 }
 .software_dev_color{
@@ -43,4 +48,18 @@
     color: ivory;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+}
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear alternate infinite;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
