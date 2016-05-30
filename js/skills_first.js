@@ -1,28 +1,30 @@
 /**
  * Created by Tahnik Mustasin on 30/05/2016.
  */
-var window_height = $(window).height();
-var document_height = $('html').height();
-//console.log(document_height);
 
-$('body').height(window_height);
-var skills_second_moved = false;
+changeCircleWidth();
+
+/*
+Changing the circle height of the circles in skills page
+ */
 var i = 0;
-var recentScroll = false;
 function changeCircleWidth() {
-    var timerForOpacityChange = 500;
     $('.circle').each(function () {
         var circle_width = $(this).width();
         $(this).height(circle_width);
     })
 }
-changeCircleWidth();
+/*
+changing the circle's opacity in skills page with css transition
+ */
 function changeCircleOpacity() {
-    var timerForOpacityChange = 500;
     $('.circle').each(function () {
         $(this).css("opacity", "1.0");
     })
 }
+/*
+Adding some shadows when the user hover's over circle
+ */
 $('.circle').hover(
     function () {
         $(this).addClass("circle_hover");
@@ -33,15 +35,9 @@ $('.circle').hover(
 )
 
 
-
-
-$("body").click(function(e){
-    var parentOffset = $(this).parent().offset();
-    var relX = e.pageX - parentOffset.left;
-    var relY = e.pageY - parentOffset.top;
-    console.log("MouseX: " + relX + " MouseY: " + relY);
-
-});
+/*
+This piece of code draws line between circle using SVG lines and keyframe transitions
+ */
 function drawAllLine() {
     drawLine('.software_development', '.java');
     drawLine('.software_development', '.csharp');
@@ -75,9 +71,6 @@ function drawLine(div1, div2){
     var div2X = $(div2).offset().left + $(div2).width() / 2 - $('.skills_first').offset().left;
 
     createLineElement(div1X, div1Y, div2X, div2Y);
-    //console.log(div1);
-
-
 }
 
 function createLineElement(x1, y1, x2, y2){
@@ -94,6 +87,9 @@ function createLineElement(x1, y1, x2, y2){
     width = Math.abs(x2 - x1);
     height = Math.abs(y2 - y1);
 
+    /*
+    This if else statements checks the relative position of both circle and determine the drawing canvas of SVG
+     */
     if(Math.abs(x2 - x1) < 1){
         line_width = 4;
         width = 5;
@@ -158,5 +154,5 @@ function createLineElement(x1, y1, x2, y2){
         .attr("x2", line_X2)
         .attr("y2", line_Y2)
         .attr("stroke-width", line_width)
-        .attr("stroke", "black").attr("class", "path");
+        .attr("stroke", "grey").attr("class", "path");
 }

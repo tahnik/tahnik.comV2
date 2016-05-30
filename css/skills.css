@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 .skills_first{
     height: 100%;
-    width: 1400px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     -webkit-transition: all 1s ease-out;
@@ -13,6 +13,12 @@
     background: -webkit-linear-gradient(to left, #1CD8D2 , #93EDC7); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #1CD8D2 , #93EDC7);
     position: relative;
+}
+.skills_first_main{
+    width: 1400px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .skills_second{
     height: 100%;
