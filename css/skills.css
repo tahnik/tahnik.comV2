@@ -12,11 +12,10 @@
     height: 100%;
 }
 .circle{
-    width: 20%;
     -webkit-border-radius:50%;
     -moz-border-radius:50%;
     border-radius:50%;
-    border: 2px solid white;
+    border: 2px solid #2ABB9B;
     display: block;
     position: relative;
     -webkit-transition: all 0.3s ease;
@@ -30,11 +29,15 @@
 .software_dev_color{
     background-color: #1f7e9a;
 }
+.sql_color{
+    background-color: #F2784B;
+}
 .webdev_color{
-    background-color: linen;
+    background-color: #2ABB9B;
+    border: 2px solid white!important;
 }
 .webdev_color > h5{
-    color: #2b2d2f !important;
+    color: #d9edf7 !important;
 }
 .circle_hover{
     -webkit-box-shadow: 0 0 8px black;
@@ -48,18 +51,30 @@
     color: ivory;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    font-size: medium;
 }
 .path {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation: dash 5s linear alternate infinite;
+    animation: dash 3s ease-in;
+    -webkit-animation: dash 3s ease-in;
+    -webkit-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
 }
 
 @keyframes dash {
-    from {
+    0% {
         stroke-dashoffset: 1000;
     }
-    to {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes dash {
+    0%{
+        stroke-dashoffset: 1000;
+    }
+    100% {
         stroke-dashoffset: 0;
     }
 }
