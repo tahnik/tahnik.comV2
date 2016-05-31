@@ -1,33 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+
 body{
-    height: 100%;
     overflow: hidden;
 }
-.full_page{
+.main_body{
     height: 100%;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
-    position: relative;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+    width: 100%;
 }
 .image_full_width{
     width: 100%;
 }
-.background_image{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-image: url("../resources/front_page.jpg");
-    background-position: center;
-    background-size: cover;
+.common_transition{
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -ms-transition: all 1s ease;
     -o-transition: all 1s ease;
     transition: all 1s ease;
+}
+.loading_screen{
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    position: absolute;
+    background-color: white;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.loading_image{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+.loading_screen > h1 {
+    color: antiquewhite;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cabin', sans-serif;
+    font-size: 5em;
 }
