@@ -38,11 +38,14 @@ var whichPage = 1;
 var EnteredSkillsOnce = false;
 var scrollValue = 0;
 var recentScroll = false;
+var maxPage = 2;
+var lastPage = false;
 $('body').mousewheel(function(event) {
-    if(event.deltaY == -1 && !recentScroll){
+    if(event.deltaY == -1 && !recentScroll && !lastPage){
         whichPage++;
         recentScroll = true;
         if(whichPage == 2) {
+            lastPage = true;
             $('.page_2_back').css({
                 '-moz-transform': 'translateY(' + -window_height + 'px)',
                 '-webkit-transform': 'translateY(' + -window_height + 'px)',
@@ -94,17 +97,24 @@ $('body').mousewheel(function(event) {
                 EnteredSkillsOnce = true;
             }
         }, 1500);
-    }else if(event.deltaY && !recentScroll && scrollValue != 0){
+        console.log("Down");
+    }
+    if(event.deltaY == 1 && !recentScroll && scrollValue != 0){
+        if(lastPage){
+            lastPage = false;
+        }
         whichPage--;
         recentScroll = true;
         if(whichPage == 1){
-            $('.page_2_back').css({
-                '-moz-transform': 'translateY(' + window_height + 'px)',
-                '-webkit-transform': 'translateY(' + window_height + 'px)',
-                '-o-transform': 'translateY(' + window_height + 'px)',
-                '-ms-transform': 'translateY(' + window_height + 'px)',
-                'transform': 'translateY(' + window_height + 'px)'
-            });
+            setTimeout(function () {
+                $('.page_2_back').css({
+                    '-moz-transform': 'translateY(' + window_height + 'px)',
+                    '-webkit-transform': 'translateY(' + window_height + 'px)',
+                    '-o-transform': 'translateY(' + window_height + 'px)',
+                    '-ms-transform': 'translateY(' + window_height + 'px)',
+                    'transform': 'translateY(' + window_height + 'px)'
+                });
+            }, 500)
             $('.page_2').css({
                 '-moz-transform': 'translateY(' + window_height + 'px)',
                 '-webkit-transform': 'translateY(' + window_height + 'px)',
@@ -140,6 +150,7 @@ $('body').mousewheel(function(event) {
             recentScroll = false;
             scrollValue += window_height;
         }, 1500);
+        console.log("Up");
     }
     console.log(whichPage);
 });
