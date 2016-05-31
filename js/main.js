@@ -87,7 +87,7 @@ $(document).ready(function(){
                 $('.page_1_h1').fadeOut();
                 setTimeout(function () {
                     $('.page_1_h1').text('Skills');
-                    $('.page_1_h1').css('color', 'white');
+                    $('.page_1_h1').css('color', '#ebebeb');
                     $('.page_1_h1').fadeIn();
                 }, 1000);
             }else if(whichPage == 3){
@@ -184,7 +184,7 @@ $(document).ready(function(){
                 $('.page_1_h1').fadeOut();
                 setTimeout(function () {
                     $('.page_1_h1').text('Skills');
-                    $('.page_1_h1').css('color', '#373D3F');
+                    $('.page_1_h1').css('color', 'white');
                     $('.page_1_h1').fadeIn();
                 }, 1000);
             }

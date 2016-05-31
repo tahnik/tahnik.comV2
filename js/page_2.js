@@ -163,5 +163,5 @@ function createLineElement(x1, y1, x2, y2) {
         .attr("x2", line_X2)
         .attr("y2", line_Y2)
         .attr("stroke-width", line_width)
-        .attr("stroke", "black").attr("class", "path");
+        .attr("stroke", "white").attr("class", "path");
 }
