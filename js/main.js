@@ -8,7 +8,8 @@ $(document).on({
     ajaxStart: function() {},
      ajaxStop: function() {}    
 });
-
+/* taking the 3rd page to right side */
+$('.page_3_back').css('left', window_width);
 $(document).ready(function(){
     setTimeout(function(){
         $('.loading_screen').css('opacity', '0');
@@ -56,7 +57,6 @@ $(document).ready(function(){
             whichPage++;
             recentScroll = true;
             if(whichPage == 2) {
-                lastPage = true;
                 $('.page_2_back').css({
                     '-moz-transform': 'translateY(' + -window_height + 'px)',
                     '-webkit-transform': 'translateY(' + -window_height + 'px)',
@@ -87,6 +87,24 @@ $(document).ready(function(){
                 $('.page_1_h1').fadeOut();
                 setTimeout(function () {
                     $('.page_1_h1').text('Skills');
+                    $('.page_1_h1').css('color', 'white');
+                    $('.page_1_h1').fadeIn();
+                }, 1000);
+            }else if(whichPage == 3){
+                lastPage = true;
+                $('.page_3_back').css({
+                    '-moz-transform': 'translateX(' + -window_width + 'px)',
+                    '-webkit-transform': 'translateX(' + -window_width + 'px)',
+                    '-o-transform': 'translateX(' + -window_width + 'px)',
+                    '-ms-transform': 'translateX(' + -window_width + 'px)',
+                    'transform': 'translateX(' + -window_width + 'px)'
+                });
+                $('.page_2').css({
+                    opacity: 0
+                });
+                $('.page_1_h1').fadeOut();
+                setTimeout(function () {
+                    $('.page_1_h1').text('Work Experience');
                     $('.page_1_h1').css('color', '#373D3F');
                     $('.page_1_h1').fadeIn();
                 }, 1000);
@@ -152,6 +170,23 @@ $(document).ready(function(){
                     $('.page_1_h1').css('color', '#ebebeb');
                     $('.page_1_h1').fadeIn();
                 }, 500);
+            }else if(whichPage == 2){
+                $('.page_3_back').css({
+                    '-moz-transform': 'translateX(' + window_width + 'px)',
+                    '-webkit-transform': 'translateX(' + window_width + 'px)',
+                    '-o-transform': 'translateX(' + window_width + 'px)',
+                    '-ms-transform': 'translateX(' + window_width + 'px)',
+                    'transform': 'translateX(' + window_width + 'px)'
+                });
+                $('.page_2').css({
+                    opacity: 1
+                });
+                $('.page_1_h1').fadeOut();
+                setTimeout(function () {
+                    $('.page_1_h1').text('Skills');
+                    $('.page_1_h1').css('color', '#373D3F');
+                    $('.page_1_h1').fadeIn();
+                }, 1000);
             }
 
             /*

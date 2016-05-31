@@ -1,11 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montez);
 @import url(https://fonts.googleapis.com/css?family=Mate);
 .page_1{
-    -webkit-transform: translateZ(5px);
-    -moz-transform: translateZ(5px);
-    -ms-transform: translateZ(5px);
-    -o-transform: translateZ(5px);
-    transform: translateZ(5px);
+    z-index: 5;
     position: relative;
     height: 100%;
     width: 100%;
@@ -18,11 +14,7 @@
     background-position: center;
     background-size: cover;
 
-    -webkit-transform: translateZ(-10px);
-    -moz-transform: translateZ(-10px);
-    -ms-transform: translateZ(-10px);
-    -o-transform: translateZ(-10px);
-    transform: translateZ(-10px);
+    z-index: -10;
 }
 .page_1_h1{
     color: #ebebeb;

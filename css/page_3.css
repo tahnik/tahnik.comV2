@@ -1,0 +1,15 @@
+.page_3_back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #19B5FE;
+
+    z-index: -8;
+    
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}

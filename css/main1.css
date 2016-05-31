@@ -6,16 +6,6 @@ body{
 .main_body{
     height: 100%;
     width: 100%;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    /*
-    This will give you 3d depth. TranslateZ with negetive value will
-    appear far away
-    perspective: 300px;
-    -webkit-perspective: 800px;
-    */
 }
 .image_full_width{
     width: 100%;

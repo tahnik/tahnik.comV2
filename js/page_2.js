@@ -74,9 +74,9 @@ function drawAllLine() {
 }
 function drawLine(div1, div2){
     var div1Y= $(div1).offset().top + $(div1).height() / 2;
-    var div1X = $(div1).offset().left + $(div1).width() / 2;
+    var div1X = $(div1).offset().left + $(div1).width() / 2 - $('.skills_first_main').offset().left;
     var div2Y = $(div2).offset().top + $(div2).height() / 2;
-    var div2X = $(div2).offset().left + $(div2).width() / 2;
+    var div2X = $(div2).offset().left + $(div2).width() / 2 - $('.skills_first_main').offset().left;
 
     createLineElement(div1X, div1Y, div2X, div2Y);
 }
@@ -163,5 +163,5 @@ function createLineElement(x1, y1, x2, y2) {
         .attr("x2", line_X2)
         .attr("y2", line_Y2)
         .attr("stroke-width", line_width)
-        .attr("stroke", "grey").attr("class", "path");
+        .attr("stroke", "black").attr("class", "path");
 }
