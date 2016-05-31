@@ -13,6 +13,11 @@
     background: -webkit-linear-gradient(to left, #1CD8D2 , #93EDC7); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #1CD8D2 , #93EDC7);
     position: relative;
+    -webkit-transform: translateZ(3px);
+    -moz-transform: translateZ(3px);
+    -ms-transform: translateZ(3px);
+    -o-transform: translateZ(3px);
+    transform: translateZ(3px);
 }
 .skills_first_main{
     width: 1400px;
@@ -36,7 +41,6 @@
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    z-index: 100;
     opacity: 0;
 }
 .software_dev_color{
