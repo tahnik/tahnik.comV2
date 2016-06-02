@@ -43,6 +43,14 @@
     -o-transition: opacity 2s ease-in;
     transition: opacity 2s ease-in;
 }
+.page_1_my_info > .col-md-6{
+    padding: 0;
+}
+.page_1_my_info > .col-md-6 > h2, p, h4{
+    color: white;
+    font-family: 'Mate', serif;
+    font-size: 1.1em;
+}
 /*
 This css is for drawing paths with SVG with animation
 */

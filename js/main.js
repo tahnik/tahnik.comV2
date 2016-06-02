@@ -9,7 +9,7 @@ $(document).on({
      ajaxStop: function() {}    
 });
 /* taking the 3rd page to right side */
-$('.page_3_back').css('left', window_width);
+$('.page_4_back').css('left', window_width);
 $(document).ready(function(){
     setTimeout(function(){
         $('.loading_screen').css('opacity', '0');
@@ -50,21 +50,20 @@ $(document).ready(function(){
     var EnteredSkillsOnce = false;
     var scrollValue = 0;
     var recentScroll = false;
-    var maxPage = 2;
     var lastPage = false;
     $('body').mousewheel(function(event) {
         if(event.deltaY == -1 && !recentScroll && !lastPage){
             whichPage++;
             recentScroll = true;
-            if(whichPage == 2) {
-                $('.page_2_back').css({
+            if(whichPage == 3) {
+                $('.page_3_back').css({
                     '-moz-transform': 'translateY(' + -window_height + 'px)',
                     '-webkit-transform': 'translateY(' + -window_height + 'px)',
                     '-o-transform': 'translateY(' + -window_height + 'px)',
                     '-ms-transform': 'translateY(' + -window_height + 'px)',
                     'transform': 'translateY(' + -window_height + 'px)'
                 });
-                $('.page_2').css({
+                $('.page_3').css({
                     '-moz-transform': 'translateY(' + -window_height + 'px)',
                     '-webkit-transform': 'translateY(' + -window_height + 'px)',
                     '-o-transform': 'translateY(' + -window_height + 'px)',
@@ -90,16 +89,26 @@ $(document).ready(function(){
                     $('.page_1_h1').css('color', '#ebebeb');
                     $('.page_1_h1').fadeIn();
                 }, 1000);
-            }else if(whichPage == 3){
+                /*
+                 If it has entered the skills page once then draw all the circles and lines
+                 */
+                setTimeout(function () {
+                    if(!EnteredSkillsOnce) {
+                        changeCircleOpacity();
+                        drawAllLine();
+                        EnteredSkillsOnce = true;
+                    }
+                }, 1500);
+            }else if(whichPage == 4){
                 lastPage = true;
-                $('.page_3_back').css({
+                $('.page_4_back').css({
                     '-moz-transform': 'translateX(' + -window_width + 'px)',
                     '-webkit-transform': 'translateX(' + -window_width + 'px)',
                     '-o-transform': 'translateX(' + -window_width + 'px)',
                     '-ms-transform': 'translateX(' + -window_width + 'px)',
                     'transform': 'translateX(' + -window_width + 'px)'
                 });
-                $('.page_2').css({
+                $('.page_3').css({
                     opacity: 0
                 });
                 $('.page_1_h1').fadeOut();
@@ -116,17 +125,6 @@ $(document).ready(function(){
                 recentScroll = false;
                 scrollValue -= window_height;
             }, 1500);
-            /*
-             If it has entered the skills page once then draw all the circles and lines
-             */
-            setTimeout(function () {
-                if(!EnteredSkillsOnce) {
-                    changeCircleOpacity();
-                    drawAllLine();
-                    EnteredSkillsOnce = true;
-                }
-            }, 1500);
-            console.log("Down");
         }
         if(event.deltaY == 1 && !recentScroll && scrollValue != 0){
             if(lastPage){
@@ -134,9 +132,9 @@ $(document).ready(function(){
             }
             whichPage--;
             recentScroll = true;
-            if(whichPage == 1){
+            if(whichPage == 2){
                 setTimeout(function () {
-                    $('.page_2_back').css({
+                    $('.page_3_back').css({
                         '-moz-transform': 'translateY(' + window_height + 'px)',
                         '-webkit-transform': 'translateY(' + window_height + 'px)',
                         '-o-transform': 'translateY(' + window_height + 'px)',
@@ -144,7 +142,7 @@ $(document).ready(function(){
                         'transform': 'translateY(' + window_height + 'px)'
                     });
                 }, 500)
-                $('.page_2').css({
+                $('.page_3').css({
                     '-moz-transform': 'translateY(' + window_height + 'px)',
                     '-webkit-transform': 'translateY(' + window_height + 'px)',
                     '-o-transform': 'translateY(' + window_height + 'px)',
@@ -170,15 +168,15 @@ $(document).ready(function(){
                     $('.page_1_h1').css('color', '#ebebeb');
                     $('.page_1_h1').fadeIn();
                 }, 500);
-            }else if(whichPage == 2){
-                $('.page_3_back').css({
+            }else if(whichPage == 3){
+                $('.page_4_back').css({
                     '-moz-transform': 'translateX(' + window_width + 'px)',
                     '-webkit-transform': 'translateX(' + window_width + 'px)',
                     '-o-transform': 'translateX(' + window_width + 'px)',
                     '-ms-transform': 'translateX(' + window_width + 'px)',
                     'transform': 'translateX(' + window_width + 'px)'
                 });
-                $('.page_2').css({
+                $('.page_3').css({
                     opacity: 1
                 });
                 $('.page_1_h1').fadeOut();
@@ -196,7 +194,7 @@ $(document).ready(function(){
                 recentScroll = false;
                 scrollValue += window_height;
             }, 1500);
-            console.log("Up");
         }
+        console.log(whichPage);
     });
 });
