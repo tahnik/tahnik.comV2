@@ -55,15 +55,15 @@ $(document).ready(function(){
         if(event.deltaY == -1 && !recentScroll && !lastPage){
             whichPage++;
             recentScroll = true;
-            if(whichPage == 3) {
-                $('.page_3_back').css({
+            if(whichPage == 2){
+                $('.page_2_back').css({
                     '-moz-transform': 'translateY(' + -window_height + 'px)',
                     '-webkit-transform': 'translateY(' + -window_height + 'px)',
                     '-o-transform': 'translateY(' + -window_height + 'px)',
                     '-ms-transform': 'translateY(' + -window_height + 'px)',
                     'transform': 'translateY(' + -window_height + 'px)'
                 });
-                $('.page_3').css({
+                $('.page_2').css({
                     '-moz-transform': 'translateY(' + -window_height + 'px)',
                     '-webkit-transform': 'translateY(' + -window_height + 'px)',
                     '-o-transform': 'translateY(' + -window_height + 'px)',
@@ -82,6 +82,27 @@ $(document).ready(function(){
                     '-o-transform': 'translateY(' + ((-$('.page_1_name').offset().top) + 20) + 'px)',
                     '-ms-transform': 'translateY(' + ((-$('.page_1_name').offset().top) + 20) + 'px)',
                     'transform': 'translateY(' + ((-$('.page_1_name').offset().top) + 20) + 'px)'
+                });
+                $('.page_1_h1').fadeOut();
+                setTimeout(function () {
+                    $('.page_1_h1').text('Work and Education');
+                    $('.page_1_h1').css('color', '#ebebeb');
+                    $('.page_1_h1').fadeIn();
+                }, 1000);
+            }else if(whichPage == 3) {
+                $('.page_3_back').css({
+                    '-moz-transform': 'translateY(' + -window_height + 'px)',
+                    '-webkit-transform': 'translateY(' + -window_height + 'px)',
+                    '-o-transform': 'translateY(' + -window_height + 'px)',
+                    '-ms-transform': 'translateY(' + -window_height + 'px)',
+                    'transform': 'translateY(' + -window_height + 'px)'
+                });
+                $('.page_3').css({
+                    '-moz-transform': 'translateY(' + -window_height + 'px)',
+                    '-webkit-transform': 'translateY(' + -window_height + 'px)',
+                    '-o-transform': 'translateY(' + -window_height + 'px)',
+                    '-ms-transform': 'translateY(' + -window_height + 'px)',
+                    'transform': 'translateY(' + -window_height + 'px)'
                 });
                 $('.page_1_h1').fadeOut();
                 setTimeout(function () {
@@ -132,9 +153,9 @@ $(document).ready(function(){
             }
             whichPage--;
             recentScroll = true;
-            if(whichPage == 2){
+            if(whichPage == 1){
                 setTimeout(function () {
-                    $('.page_3_back').css({
+                    $('.page_2_back').css({
                         '-moz-transform': 'translateY(' + window_height + 'px)',
                         '-webkit-transform': 'translateY(' + window_height + 'px)',
                         '-o-transform': 'translateY(' + window_height + 'px)',
@@ -142,7 +163,7 @@ $(document).ready(function(){
                         'transform': 'translateY(' + window_height + 'px)'
                     });
                 }, 500)
-                $('.page_3').css({
+                $('.page_2').css({
                     '-moz-transform': 'translateY(' + window_height + 'px)',
                     '-webkit-transform': 'translateY(' + window_height + 'px)',
                     '-o-transform': 'translateY(' + window_height + 'px)',
@@ -168,6 +189,29 @@ $(document).ready(function(){
                     $('.page_1_h1').css('color', '#ebebeb');
                     $('.page_1_h1').fadeIn();
                 }, 500);
+            }else if(whichPage == 2){
+                setTimeout(function () {
+                    $('.page_3_back').css({
+                        '-moz-transform': 'translateY(' + window_height + 'px)',
+                        '-webkit-transform': 'translateY(' + window_height + 'px)',
+                        '-o-transform': 'translateY(' + window_height + 'px)',
+                        '-ms-transform': 'translateY(' + window_height + 'px)',
+                        'transform': 'translateY(' + window_height + 'px)'
+                    });
+                }, 500)
+                $('.page_3').css({
+                    '-moz-transform': 'translateY(' + window_height + 'px)',
+                    '-webkit-transform': 'translateY(' + window_height + 'px)',
+                    '-o-transform': 'translateY(' + window_height + 'px)',
+                    '-ms-transform': 'translateY(' + window_height + 'px)',
+                    'transform': 'translateY(' + window_height + 'px)'
+                });
+                $('.page_1_h1').fadeOut();
+                setTimeout(function () {
+                    $('.page_1_h1').text('Work and Education');
+                    $('.page_1_h1').css('color', 'white');
+                    $('.page_1_h1').fadeIn();
+                }, 1000);
             }else if(whichPage == 3){
                 $('.page_4_back').css({
                     '-moz-transform': 'translateX(' + window_width + 'px)',
