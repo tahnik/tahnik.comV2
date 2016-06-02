@@ -22,6 +22,7 @@
     font-size: 4em;
     margin-left: 0.1em;
     margin-top: 0em;
+	z-index: 99;
 }
 .page_1_paragraph{
     color: white;

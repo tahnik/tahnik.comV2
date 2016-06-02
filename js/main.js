@@ -10,6 +10,28 @@ $(document).on({
 });
 /* taking the 3rd page to right side */
 $('.page_4_back').css('left', window_width);
+$('.page_2_work_IS').css('height', window_height*0.2);
+$('.IS_Sidebar').css('height', window_height*0.2);
+
+$('.page_2_work_IC').css('height', window_height*0.3);
+$('.IC_Sidebar').css('height', window_height*0.3);
+
+$('.page_2_work_SE').css('height', window_height*0.4);
+$('.SE_Sidebar').css('height', window_height*0.4);
+
+$('.page_2_education_SSC').css('height', window_height*0.4);
+$('.SSC_Sidebar').css('height', window_height*0.4);
+
+$('.page_2_education_HSC').css('height', window_height*0.2);
+$('.HSC_Sidebar').css('height', window_height*0.4);
+
+$('.page_2_education_CSE').css('height', window_height*0.3);
+$('.CSE_Sidebar').css('height', window_height*0.4);
+
+
+
+
+
 $(document).ready(function(){
     setTimeout(function(){
         $('.loading_screen').css('opacity', '0');
@@ -86,8 +108,8 @@ $(document).ready(function(){
                 $('.page_1_h1').fadeOut();
                 setTimeout(function () {
                     $('.page_1_h1').text('Work and Education');
-                    $('.page_1_h1').css('color', '#ebebeb');
-                    $('.page_1_h1').fadeIn();
+                    $('.page_1_h1').css('color', '#373D3F');
+                    //$('.page_1_h1').fadeIn();
                 }, 1000);
             }else if(whichPage == 3) {
                 $('.page_3_back').css({
