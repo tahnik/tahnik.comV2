@@ -2,13 +2,6 @@
  * Created by Tahnik Mustasin on 31/05/2016.
  */
 
-/* setting a global width and height for browser window */
-var window_height = $(window).height();
-var window_width = $(window).width();
-
-$('.page_3').css('top', window_height);
-$('.page_3_back').css('top', window_height);
-
 
 changeCircleWidth();
 

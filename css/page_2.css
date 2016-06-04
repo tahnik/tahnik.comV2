@@ -1,22 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Averia+Serif+Libre);
-.page_2_back {
-    background-color: floralwhite;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: -9;
-    -webkit-transition: all 1s ease-out;
-    -moz-transition: all 1s ease-out;
-    -ms-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-    transition: all 1s ease-out;
-    opacity: 1;
-}
 .page_2 {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 5;
+	margin: 0;
+    position: relative;
+    z-index: 3;
     -webkit-transition: all 1.5s ease;
     -moz-transition: all 1.5s ease;
     -ms-transition: all 1.5s ease;
@@ -24,14 +11,21 @@
     transition: all 1.5s ease;
 }
 .page_2_work_back{
+	width: 100%;
 	height: 100%;
 	padding: 0;
-	background-color: #D8335B; 
+	/*background-color: #1DABB8;*/
+	position: absolute;
+	top: 0;
 }
 .page_2_education_back{
 	height: 100%;
+	width: 100%;
 	padding: 0;
-	background-color: #19B5FE;
+	/*background-color: #953163;*/
+	position: absolute;
+	top:0;
+	right: 0;
 }
 .page_2_work_head{
     color: #ebebeb;
@@ -48,7 +42,7 @@
 .page_2_work{
 	color: white;
 	font-family: 'Averia Serif Libre', cursive;
-	padding-right: 0;
+	padding: 0;
 }
 .page_2_education{
 	color: white;

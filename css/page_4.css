@@ -1,15 +1,10 @@
-.page_4_back {
-    height: 100%;
+.page_4 {
+    height: 100vh;
     width: 100%;
-    position: absolute;
-    top: 0;
-    background-color: #19B5FE;
-
-    z-index: -8;
-    
-    -webkit-transition: all 1s ease-out;
-    -moz-transition: all 1s ease-out;
-    -ms-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-    transition: all 1s ease-out;
+    position: relative;
+    background-color: #00B5B5;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }

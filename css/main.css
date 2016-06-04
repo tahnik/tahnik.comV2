@@ -1,11 +1,47 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 
-body{
+body, html{
     overflow: hidden;
 }
+.row{
+    margin: 0;
+}
 .main_body{
-    height: 100%;
+    height: 100vh;
     width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.main_body_parallax{
+    perspective: 300px;
+    -moz-perspective: 300px;
+    -webkit-perspective: 300px;
+    scroll-behavior: smooth;
+}
+.background_parent{
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.background{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateZ(-40px) scale(2.1);
+    -moz-transform: translateZ(-40px) scale(2.1);
+    -ms-transform: translateZ(-40px) scale(2.1);
+    -o-transform: translateZ(-40px) scale(2.1);
+    transform: translateZ(-300px) scale(2.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../resources/front_page.jpg");
+    background-repeat: repeat;
 }
 .image_full_width{
     width: 100%;
@@ -21,7 +57,7 @@ body{
     width: 100%;
     height: 100%;
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     background-color: white;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -44,4 +80,23 @@ body{
     transform: translate(-50%, -50%);
     font-family: 'Cabin', sans-serif;
     font-size: 5em;
+}
+.page_1{
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+}
+.page_2{
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.page_3{
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }

@@ -1,23 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Montez);
 @import url(https://fonts.googleapis.com/css?family=Mate);
 .page_1{
-    z-index: 5;
+    z-index: 1;
     position: relative;
-    height: 100%;
     width: 100%;
-}
-.page_1_back{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-image: url("../resources/front_page.jpg");
-    background-position: center;
-    background-size: cover;
-
-    z-index: -10;
+    min-height: 100vh;
 }
 .page_1_h1{
     color: #ebebeb;
+    text-align: center;
     font-family: 'Montez', cursive;
     font-size: 4em;
     margin-left: 0.1em;
