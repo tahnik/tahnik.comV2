@@ -28,10 +28,13 @@ $('.HSC_Sidebar').css('height', '10em');
 $('.page_2_education_CSE').css('height', '15em');
 $('.CSE_Sidebar').css('height', '15em');
 
-$('.page_3').css('height', $('.sql_back').height() * 2);
-$('.sql_back, .sql_front, .sql_stable').css('margin-top', $('.sql_back').height() * 0.5);
+$('.page_3').css('height', $('.sql_back').height() * 1.5);
+$('.sql_back, .sql_front, .sql_stable').css('margin-top', $('.sql_back').height() * 0.2);
 
-var full_height = $('.page_1').height() + $('.page_2').height() + $('.page_3').height() + $('.page_4').height();
+$('.page_6').css('height', $('.poster_back').height() * 1.5);
+$('.poster_back, .poster_stable').css('margin-top', $('.poster_back').height() * 0.2);
+
+var full_height = $('.page_1').height() + $('.page_2').height() + $('.page_3').height() + $('.page_4').height() + $('.page_5').height() + $('.page_6').height() + $('.page_7').height();
 $('.background_parent').css('height', (full_height * 0.6451) + 'px');
 //$('.main_body').css('height', full_height + 'px');
 
@@ -45,6 +48,9 @@ $(document).ready(function(){
         $('.loading_screen').remove();
     }, 2000);
 
+
+    $('.page_3').css('height', $('.sql_back').height() * 1.5);
+    $('.sql_back, .sql_front, .sql_stable').css('margin-top', $('.sql_back').height() * 0.2);
 
 
     /*
