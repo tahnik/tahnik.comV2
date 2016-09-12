@@ -27,7 +27,8 @@
 .page_6 {
     width: 100%;
     position: relative;
-    z-index: -1;
+    /* Breaks the page in Chrome 53 */
+    /*z-index: -1;*/
 }
 .poster_back, .poster_stable{
     width: 100%;
