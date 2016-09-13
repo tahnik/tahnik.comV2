@@ -41,7 +41,6 @@ $(document).ready(function(){
     }
 });
 
-
 $(window).on("load", function () {
     $('.page_3').css('height', $('.sql_back').height() * 1.5);
     $('.sql_back, .sql_front, .sql_stable').css('margin-top', $('.sql_back').height() * 0.2);
@@ -52,7 +51,7 @@ $(window).on("load", function () {
 
     setTimeout(function () {
         var full_height = $('.page_1').height() + $('.page_2').height() + $('.page_3').height() + $('.page_4').height() + $('.page_5').height() + $('.page_6').height() + $('.page_7').height() + $('.page_5_1').height();
-        $('.background_parent').css('height', (full_height * 0.6451) + 'px');
+        $('.background_parent').css('height', full_height + 'px');
     },500)
 })
 

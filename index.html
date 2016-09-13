@@ -28,6 +28,8 @@
     <meta name="distribution" content="global" />
     <meta name="Copyright" content="Tahnik Mustasin" />
 
+    <meta name="theme-color" content="#0e5354" />
+
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="http://www.atlasestateagents.co.uk/css/tether.min.css">
@@ -226,9 +228,41 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
-<script src="js/jquery.mousewheel.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/jquery.browser.min.js"></script>
+<script>
+    window.onload = function() {
+
+        var backgroundParent = document.getElementsByClassName("background_parent")[0];
+
+        var posterStable = document.getElementsByClassName("poster_stable")[0];
+        var posterBack = document.getElementsByClassName("poster_back")[0];
+        var mainBody = document.getElementsByClassName("main_body")[0];
+        var height = Math.max(mainBody.clientHeight, mainBody.scrollHeight, mainBody.offsetHeight);
+        var loadingScreen = document.getElementsByClassName("loading_screen")[0];
+        posterBack.style.paddingTop = posterStable.clientHeight / 2.5 + 'px';
+        posterStable.style.paddingTop = posterStable.clientHeight / 2.5 + 'px';
+        posterStable.style.paddingBottom = posterStable.clientHeight / 4 + 'px';
+
+        backgroundParent.style.height = height + 'px';
+
+        setTimeout(function () {
+            loadingScreen.style.opacity = 0;
+        }, 1000);
+        setTimeout(function () {
+            loadingScreen.parentNode.removeChild(loadingScreen);
+        }, 2000)
+    };
+    window.onresize = function () {
+        var backgroundParent = document.getElementsByClassName("background_parent")[0];
+        var posterStable = document.getElementsByClassName("poster_stable")[0];
+        var posterBack = document.getElementsByClassName("poster_back")[0];
+        var mainBody = document.getElementsByClassName("main_body")[0];
+        var height = Math.max(mainBody.clientHeight, mainBody.scrollHeight, mainBody.offsetHeight);
+
+        posterBack.style.paddingTop = posterStable.clientHeight / 2.5 + 'px';
+
+        backgroundParent.style.height = height + 'px';
+    }
+</script>
 </body>
 </html>
