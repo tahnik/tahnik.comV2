@@ -158,12 +158,14 @@ p{
     Chrome Update 53
 */
 
-.page_1, .page_2, .page_4, .page_5_1, .page_5, .page_7 {
+.page_1, .page_2, .page_4, .page_5_1, .page_5, .page_7, .page_buhler, .page_webdev{
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
     -o-transform: translateZ(0);
     transform: translateZ(0);
+
+    margin-bottom: 5em;
 }
 
 
@@ -410,7 +412,6 @@ This css is for drawing paths with SVG with animation
 }
 .sql_stable{
     position: relative;
-    margin: 20em 0 20em 0;
     z-index: 7;
     -webkit-transform: translateZ(0px);
     -moz-transform: translateZ(0px);
@@ -450,6 +451,29 @@ This css is for drawing paths with SVG with animation
     color:whitesmoke;
     font-family: 'Bree Serif', serif;
 }
+.page_buhler > .col-md-8 > h1{
+    font-size: 3vw;
+    color:whitesmoke;
+    font-family: 'Bree Serif', serif;
+    text-align: center;
+}
+.page_buhler > .col-md-8 > p{
+    text-align: center;
+}
+.page_webdev > .col-md-8 > h1{
+    font-size: 3vw;
+    color:whitesmoke;
+    font-family: 'Bree Serif', serif;
+    text-align: center;
+}
+.page_webdev > .col-md-8 > h5{
+    color:whitesmoke;
+    font-family: 'Bree Serif', serif;
+    text-align: center;
+}
+.page_webdev > .col-md-8 > p{
+    text-align: center;
+}
 .page_5 {
     width: 100%;
     position: relative;
@@ -482,7 +506,7 @@ This css is for drawing paths with SVG with animation
     -moz-transform: translateZ(-30px) scale(1.75) translateY(-150px);
     -ms-transform: translateZ(-30px) scale(1.75) translateY(-150px);
     -o-transform: translateZ(-30px) scale(1.75) translateY(-150px);
-    transform: translateZ(-200px) scale(1.5);
+    transform: translateZ(-150px) scale(1.5);
 }
 .poster_stable{
     z-index: 7;
@@ -501,18 +525,17 @@ This css is for drawing paths with SVG with animation
 }
 
 .page_7 > .col-md-12 > h1{
-    font-size: 4vw;
+    font-size: 3vw;
     font-family: 'Bree Serif', serif;
     color: white;
     text-align: center;
 }
 .page_7 {
-    height: 100vh;
     width: 100%;
     position: relative;
-    background: #2980b9; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #2980b9 , #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #2980b9 , #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background: #2980b9; !* fallback for old browsers *!*/
+    /*background: -webkit-linear-gradient(to left, #2980b9 , #2c3e50); !* Chrome 10-25, Safari 5.1-6 *!*/
+    /*background: linear-gradient(to left, #2980b9 , #2c3e50); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
 
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -524,7 +547,7 @@ This css is for drawing paths with SVG with animation
     text-align: center;
     color: #faf2cc;
     font-family: 'Bree Serif', serif;
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 .page_7 > .col-md-6 > .col-md-12 > .center-block > a{
     color: white;
