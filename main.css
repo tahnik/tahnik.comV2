@@ -102,7 +102,7 @@ body{
     -ms-transform: translateZ(-2000px) scale(8.1);
     -o-transform: translateZ(-2000px) scale(8.1);
     transform: translateZ(-2000px) scale(8.1);
-    background-image: url("../resources/front_page.jpg");
+    background-image: url("resources/front_page.jpg");
     background-repeat: repeat;
 }
 .image_full_width{
